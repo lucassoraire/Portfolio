@@ -1,0 +1,62 @@
+---
+import '../../styles/global.css';
+import Index from '../index.astro';
+import GaleriaItem from '../../components/GaleriaItem.astro';
+
+
+const galeria = [
+  {
+    image: "/assets/puertouno.jpg",
+    title: "Diseño de interfaz",
+    description: "Se trabajó un diseño limpio con enfoque en UX. Cuatro secciones para que el cliente pueda conocer de manera simple las comodidades que brinda el Hotel, sus habitaciones como también las sucursales en las que se encuentran.Todo pensado para que la experiencia sea óptima.",
+    spanCols: 2,
+    spanRows: 1
+  },
+  {
+    image: "/assets/puertouno.jpg",
+    title: "Reservas funcionales",
+    description: "Implementación de sistema de reservas con PHP y MySQL. Cada cliente podía reservar su habitación luego de poder ver con detalle toda la información de la misma, seleccionaba fecha de ingreso y egreso, luego seleccionaba el método de pago y finalizaba la reserva. Todo simple para que no tenga que dar vueltas innecesarias.",
+  },
+  {
+    image: "/assets/puertouno.jpg",
+    title: "Responsive design",
+    description: "Adaptado a dispositivos móviles para mejor experiencia. Desde la compu, desde la tablet o desde el celular, esta página se puede visitar de manera cómoda y legible con cualquier dispositivo.",
+  },
+  {
+    image: "/assets/puertouno.jpg",
+    title: "Contacto",
+    description: "Siempre es bueno tener un apartado de contacto para que los clientes puedan ahí mandar sus consultas y expresarse de la mejor manera. Con solo pedir un mail o un teléfono el Hotel ya sabe que esta contacto con sus clientes.",
+  },
+  // ...más imágenes
+];
+---
+
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <title>Proyectos - Puerto Barc.Co a</title>
+    </head>
+    <body>
+        <section class="max-w-6xl mx-auto px-4 py-12">
+            <h1 class="text-4xl font-semibold mb-6 text-amber-200">PROYECTO : PUERTO BARC.CO 
+                </h1>
+            <p class="text-lg text-white mb-12">
+            Puerto Barc.Co es un sisema desarrollado en JAVA que tiene como objetivo poder gestionar de manera sencilla y cómoda las amplias tareas que tienen los encargados del lugar. Enfocado en Programación Orientada a Objetos la idea era abarcar todos los conocimientos posibles para que sea eficiente y ayude al personal a simplificar los métodos de trabajo.
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-6 auto-rows-[350px]">
+            {
+                galeria.map((item) => (
+                <GaleriaItem 
+                    image={item.image}
+                    title={item.title}
+                    description={item.description}
+                />
+                ))
+            }
+            </div>
+        </section>
+    </body>
+</html>

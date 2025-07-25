@@ -1,0 +1,19 @@
+---
+const currentLang = (Astro.url.searchParams.get('lang') ?? 'es') as 'es' | 'en'
+---
+<header class="bg-black py-5 px-8 shadow-md fixed top-0 left-0 right-0 z-50 border-b border-opacity-50">
+  <div class="max-w-5xl mx-auto flex justify-between items-center">
+    <h1 class="text-2xl font-semibold text-white">Lucas Soraire</h1>
+    <nav class="flex items-center gap-6 text-gray-300 font-medium">
+      <a href="#aboutme" class="hover:text-sky-900 transition">Sobre mí</a>
+      <a href="#proyectos" class="hover:text-sky-900 transition">Proyectos</a>
+      <a href="#objetivos" class="hover:text-sky-900 transition">Objetivos</a>
+      <a href="#contacto" class="hover:text-sky-900 transition">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+
+
+
+
