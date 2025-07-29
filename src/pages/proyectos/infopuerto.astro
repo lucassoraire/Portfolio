@@ -3,32 +3,6 @@ import '../../styles/global.css';
 import Index from '../index.astro';
 import GaleriaItem from '../../components/GaleriaItem.astro';
 
-
-const galeria = [
-  {
-    image: "/assets/puertouno.jpg",
-    title: "Diseño de interfaz",
-    description: "Se trabajó un diseño limpio con enfoque en UX. Cuatro secciones para que el cliente pueda conocer de manera simple las comodidades que brinda el Hotel, sus habitaciones como también las sucursales en las que se encuentran.Todo pensado para que la experiencia sea óptima.",
-    spanCols: 2,
-    spanRows: 1
-  },
-  {
-    image: "/assets/puertouno.jpg",
-    title: "Reservas funcionales",
-    description: "Implementación de sistema de reservas con PHP y MySQL. Cada cliente podía reservar su habitación luego de poder ver con detalle toda la información de la misma, seleccionaba fecha de ingreso y egreso, luego seleccionaba el método de pago y finalizaba la reserva. Todo simple para que no tenga que dar vueltas innecesarias.",
-  },
-  {
-    image: "/assets/puertouno.jpg",
-    title: "Responsive design",
-    description: "Adaptado a dispositivos móviles para mejor experiencia. Desde la compu, desde la tablet o desde el celular, esta página se puede visitar de manera cómoda y legible con cualquier dispositivo.",
-  },
-  {
-    image: "/assets/puertouno.jpg",
-    title: "Contacto",
-    description: "Siempre es bueno tener un apartado de contacto para que los clientes puedan ahí mandar sus consultas y expresarse de la mejor manera. Con solo pedir un mail o un teléfono el Hotel ya sabe que esta contacto con sus clientes.",
-  },
-  // ...más imágenes
-];
 ---
 
 <html lang="es">
@@ -36,27 +10,77 @@ const galeria = [
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width" />
         <meta name="generator" content={Astro.generator} />
-        <title>Proyectos - Puerto Barc.Co a</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+        <title>Proyectos - Puerto Barc.co</title>
     </head>
     <body>
-        <section class="max-w-6xl mx-auto px-4 py-12">
-            <h1 class="text-4xl font-semibold mb-6 text-amber-200">PROYECTO : PUERTO BARC.CO 
-                </h1>
-            <p class="text-lg text-white mb-12">
-            Puerto Barc.Co es un sisema desarrollado en JAVA que tiene como objetivo poder gestionar de manera sencilla y cómoda las amplias tareas que tienen los encargados del lugar. Enfocado en Programación Orientada a Objetos la idea era abarcar todos los conocimientos posibles para que sea eficiente y ayude al personal a simplificar los métodos de trabajo.
-            </p>
+          <section class="w-full min-h-screen flex flex-col justify-end pb-24 px-6 md:px-12 text-neutral-900 bg-cover bg-center bg-no-repeat" style="background-image: url('/assets/puertouno.jpg')">
+            <h1 class="text-6xl md:text-8xl font-bold leading-tight" data-aos="fade-right" data-aos-delay="400">Puerto Barc.Co</h1>
+            <p class="text-xl md:text-2xl max-w-2xl mt-6 opacity-80" data-aos="fade-right" data-aos-delay="400">Un sistema pensado para los empleados, facilitandoles cada tarea a realizar</p>
+          </section>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-6 auto-rows-[350px]">
-            {
-                galeria.map((item) => (
-                <GaleriaItem 
-                    image={item.image}
-                    title={item.title}
-                    description={item.description}
-                />
-                ))
-            }
+          <section class="grid grid-cols-1 md:grid-cols-2 gap-4 px-6 py-12 bg-cyan-950">
+            <img src="/assets/puertouno.jpg" class="rounded-xl" data-aos="zoom-in" data-aos-delay="100"/>
+            <img src="/assets/puertouno.jpg" class="rounded-xl" data-aos="zoom-in" data-aos-delay="200"/>
+            <img src="/assets/puertouno.jpg" class="rounded-xl" data-aos="zoom-in" data-aos-delay="300"/>
+            <img src="/assets/puertouno.jpg" class="rounded-xl" data-aos="zoom-in" data-aos-delay="400"/>
+          </section>
+
+          <section class="px-6 md:px-12 py-16 space-y-12 bg-neutral-900 text-white">
+            <div data-aos="fade-up" data-aos-delay="100" >
+              <h2 class="text-3xl font-semibold mb-4">01. Brief & Exploración </h2>
+              <p class="text-lg opacity-80">Investigamos el mercado, el perfil de clientes y el estilo visual adecuado para el hotel.</p>
             </div>
-        </section>
+            <div data-aos="fade-up" data-aos-delay="200" >
+              <h2 class="text-3xl font-semibold mb-4">02. Diseño Visual</h2>
+              <p class="text-lg opacity-80">Creamos mockups en base a los valores del hotel: elegancia, minimalismo y confort.</p>
+            </div>
+            <div data-aos="fade-up" data-aos-delay="300" >
+              <h2 class="text-3xl font-semibold mb-4" >03. Código e Implementación</h2>
+              <p class="text-lg opacity-80">Creamos mockups en base a los valores del hotel: elegancia, minimalismo y confort.</p>
+            </div>
+            <div data-aos="fade-up" data-aos-delay="400" >
+              <h2 class="text-3xl font-semibold mb-4">04. Sistema de Reservas</h2>
+              <p class="text-lg opacity-80">Creamos mockups en base a los valores del hotel: elegancia, minimalismo y confort.</p>
+            </div>
+            <!-- Más bloques -->
+          </section>
+
+          <section class="px-6 md:px-12 py-16 bg-white text-black">
+            <h2 class="text-3xl font-bold mb-8">Tecnologías e implementaciones</h2>
+            <ul class="grid grid-cols-2 md:grid-cols-4 gap-6 text-lg font-medium">
+              <li class="flex items-center gap-2 px-3 py-3 border border-amber-950 rounded-full text-sm font-medium w-fit bg-white/5">
+                <img src="/assets/html-5.png" alt="">HTML5
+              </li>
+              <li class="flex items-center gap-2 px-3 py-3 border border-amber-950 rounded-full text-sm font-medium w-fit bg-white/5">
+                <img src="/assets/css-3.png" alt="">CSS
+              </li>
+              <li class="flex items-center gap-2 px-3 py-3 border border-amber-950 rounded-full text-sm font-medium w-fit bg-white/5">
+                <img src="/assets/interfaz.png" alt="">Diseño responsivo
+              </li>
+              <li class="flex items-center gap-2 px-3 py-3 border border-amber-950 rounded-full text-sm font-medium w-fit bg-white/5">
+                <img src="/assets/interfaz.png" alt="">UX/UI
+              </li>
+              <li class="flex items-center gap-2 px-3 py-3 border border-amber-950 rounded-full text-sm font-medium w-fit bg-white/5">
+                <img src="/assets/interfaz.png" alt="">Sistema de Reservas
+              </li>
+              <li class="flex items-center gap-2 px-3 py-3 border border-amber-950 rounded-full text-sm font-medium w-fit bg-white/5">
+                <img src="/assets/interfaz.png" alt="">Laravel
+              </li>
+            </ul>
+          </section>
+
+          <section class="bg-black text-white py-12 text-center">
+            <h2 class="text-3xl font-semibold">¿Te gustó Barc.Co?</h2>
+            <p class="opacity-80 mt-2">Conectemos y llevemos tu próximo proyecto al siguiente nivel.</p>
+            <a href="../index.astro/contacto" class="mt-4 inline-block bg-white text-black px-6 py-3 rounded-full font-bold">Contacto</a>
+          </section>
+
+
+
+          <script is:browser type="module" src="/src/scripts/init-aos.js"></script>
     </body>
 </html>
