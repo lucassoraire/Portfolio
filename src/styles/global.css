@@ -1,16 +1,11 @@
 @import "tailwindcss";
 
-html{
-     scroll-behavior: smooth;
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-    font-family: "Montserrat", sans-serif;
-    font-optical-sizing: auto;
-    @apply bg-black font-sans min-h-screen;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  @apply bg-black font-sans min-h-screen;
 }
-
-
-
-
-

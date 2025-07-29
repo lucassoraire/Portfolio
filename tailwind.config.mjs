@@ -2,18 +2,17 @@
 export default {
   content: ["./src/**/*.{astro,html,js}"],
   theme: {
-    extend: {      
-    },
+    extend: {},
   },
   plugins: [],
-}
+};
 
 module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Montserrat', 'sans-serif'],
+        sans: ["Montserrat", "sans-serif"],
       },
     },
   },
-}
+};
