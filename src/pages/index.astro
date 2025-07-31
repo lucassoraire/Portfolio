@@ -6,7 +6,7 @@ import ProjectCard from '../components/ProjectCard.astro';
 import SkillCard from '../components/SkillCard.astro';
 import Contact from '../components/Contact.astro'
 import '../styles/global.css';
-
+import 'aos/dist/aos.css';
 
 
 
@@ -26,7 +26,7 @@ import '../styles/global.css';
   <body class="bg-black text-gray-100 font-sans">
 	<Header />
     <main class="pt-15">
-			<section id="aboutme" class="scroll-mt-40">
+			<section id="aboutme" class="scroll-mt-40 overflow-x-hidden">
 			<Aboutme 
 			image= "/assets/imglucas.png"
 			/>
@@ -112,16 +112,12 @@ import '../styles/global.css';
 			</div>
 		</footer>
 
-		<script>
-			import AOS from "aos";
-			import "aos/dist/aos.css";
-
-			document.addEventListener('astro:load', () => {
-				AOS.init({
-				duration: 800,
-				once: true,
+		<script is:inline>
+			if (typeof window !== "undefined") {
+				import('aos').then(AOS => {
+				AOS.init();
 				});
-			});
+			}
 		</script>
 
 
