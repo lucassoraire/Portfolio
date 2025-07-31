@@ -32,12 +32,12 @@ import 'aos/dist/aos.css';
 			/>
 			<Stats />
 			</section>
-				<h2 class="text-3xl font-bold mb-8 text-center mt-20" data-aos="fade-up">Mirá algunos de mis proyectos.</h2>
+				<h2 class="text-3xl font-bold mb-8 text-center mt-20">Mirá algunos de mis <span class="text-sky-600">proyectos.</span></h2>
 				<section class="max-w-6xl mx-auto p-4 grid gap-8 md:grid-cols-2 lg:grid-cols-3 scroll-mt-40" id="proyectos">
 				<div  >
 				<ProjectCard 
 					title="Proyecto 1 - Hotel Niluma 🏨"
-					description={`Proyecto responsive con varias páginas.\nIncluye galería de imágenes y optimización SEO.`}
+					description={`Proyecto responsive con varias páginas.\n Incluye galería de imágenes y optimización SEO.`}
 					link="/proyectos/infohotel"
 					image="/assets/hotelnilumauno.png"
 				/>
@@ -45,7 +45,7 @@ import 'aos/dist/aos.css';
 				<div  >
 				<ProjectCard 
 					title="Proyecto 2 - Puerto Barc.Co 🚢"
-					description={'App en Java con conexión a base de datos SQL y funcionalidades CRUD. n\ Trabajado con POO.'}
+					description={'App en Java con conexión a base de datos SQL y funcionalidades CRUD. Trabajado con Programación Orientada a Objetos.'}
 					link="/proyectos/infopuerto"
 					image="/assets/puertouno.jpg"
 				/>
@@ -53,7 +53,7 @@ import 'aos/dist/aos.css';
 				<div >
 				<ProjectCard 
 					title="Proyecto 3 - Web Nike 👟"
-					description={'Landing page moderna en HTML y CSS. n\ Totalmente responsive con una excelente presentación de productos.'}
+					description={'Landing page moderna en HTML y CSS. \n Totalmente responsive con una excelente presentación de productos.'}
 					link="/"
 					image="/assets/nikeuno.png"
 				/>
@@ -62,7 +62,7 @@ import 'aos/dist/aos.css';
 
 			<section class="max-w-6xl mx-auto px-6 py-16 scroll-mt-5" id="objetivos">
 				<h2 class="text-3xl font-bold mb-3 text-center">Objetivos</h2>
-				<p class="text-1xl font-semibold text-center pb-0"> ¿Qué es lo que estoy buscando?</p>
+				<p class="text-1xl font-semibold text-center pb-0 "> ¿Qué es lo que estoy <span class="text-sky-600">buscando</span> ? </p>
 				<div class="grid grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[150px] md:auto-rows-[400px] mt-15">
 					<SkillCard 
 					image="/assets/potenciar.jpg"
@@ -72,7 +72,7 @@ import 'aos/dist/aos.css';
 					/>
 					<SkillCard 
 					image="/assets/uxui.jpg"
-					title="Diseño UX/UI"
+					title="Diseño UI/UX"
 					description="Mi formación personal va enfocado 100% a mejorar la experiencia del usuario en cada click"
 					/>
 					<SkillCard 
@@ -96,17 +96,17 @@ import 'aos/dist/aos.css';
 
     </main>
 
-		<footer class="bg-stone-600 py-8 mt-16">
+		<footer class="bg-white py-8 mt-16">
 			<div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-white-700">
 
-				<div class="mb-4 md:mb-0 text-center md:text-left">
+				<div class="mb-4 md:mb-0 text-center md:text-left text-black">
 				<p class="font-bold text-lg">Contacto</p>
-				<p class="font-semibold">Email:</p> <a href="mailto:lucas@example.com" class="text-white-600 hover:underline">lucassoraire100@gmail.com</a>
-				<p class="font-semibold">Tel: </p><a href="tel:+541112223334" class="text-white-600 hover:underline">+54 11 3660-6826</a>
+				<p class="font-semibold">Email: lucassoraire100@gmail.com </p>
+				<p class="font-semibold">Tel: +54 11 3660-6826</p>
 				</div>
 
-				<div class="text-center text-sm text-white-500">
-				<p>© {new Date().getFullYear()} Lucas Soraire - Portfolio. Todos los derechos reservados.</p>
+				<div class="text-center text-l text-black font-semibold">
+				<p> {new Date().getFullYear()} • Lucas Soraire - Portfolio.</p>
 				</div>
 
 			</div>
