@@ -118,7 +118,21 @@ import 'aos/dist/aos.css';
 				AOS.init();
 				});
 			}
+		</script>	
+
+		<script is:inline>
+			document.addEventListener("DOMContentLoaded", () => {
+				const toggle = document.getElementById("menu-toggle");
+				const menu = document.getElementById("mobile-menu");
+
+				toggle?.addEventListener("click", () => {
+				menu.classList.toggle("hidden");
+				});
+			});
 		</script>
+
+		
+
 
 
 
