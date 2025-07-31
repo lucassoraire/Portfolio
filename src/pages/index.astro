@@ -6,7 +6,7 @@ import ProjectCard from '../components/ProjectCard.astro';
 import SkillCard from '../components/SkillCard.astro';
 import Contact from '../components/Contact.astro'
 import '../styles/global.css';
-import 'aos/dist/aos.css';
+
 
 
 
@@ -19,7 +19,7 @@ import 'aos/dist/aos.css';
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-	<link rel="icon" href="public/favicon.ico" type="image/x-icon"/>
+	<link rel="icon" href="/favicon.ico" type="image/x-icon"/>
 	
 </head>
   <body class="bg-black text-gray-100 font-sans">
@@ -27,7 +27,7 @@ import 'aos/dist/aos.css';
     <main class="pt-15">
 			<section id="aboutme" class="scroll-mt-40">
 			<Aboutme 
-			image= "public/assets/imglucas.png"
+			image= "/assets/imglucas.png"
 			/>
 			<Stats />
 			</section>
@@ -36,10 +36,9 @@ import 'aos/dist/aos.css';
 				<div data-aos="fade-up" data-aos-delay="100">
 				<ProjectCard 
 					title="Proyecto 1 - Hotel Niluma 🏨"
-					image2="assets/barcoemoji.png"
 					description={`Proyecto responsive con varias páginas.\nIncluye galería de imágenes y optimización SEO.`}
 					link="/proyectos/infohotel"
-					image="public/assets/hotelnilumauno.png"
+					image="/assets/hotelnilumauno.png"
 				/>
 				</div>
 				<div data-aos="fade-up" data-aos-delay="200">
@@ -47,15 +46,15 @@ import 'aos/dist/aos.css';
 					title="Proyecto 2 - Puerto Barc.Co 🚢"
 					description={'App en Java con conexión a base de datos SQL y funcionalidades CRUD. n\ Trabajado con POO.'}
 					link="/proyectos/infopuerto"
-					image="public/assets/puertouno.jpg"
+					image="/assets/puertouno.jpg"
 				/>
 				</div>
 				<div data-aos="fade-up" data-aos-delay="300">
 				<ProjectCard 
 					title="Proyecto 3 - Web Nike 👟"
 					description={'Landing page moderna en HTML y CSS. n\ Totalmente responsive con una excelente presentación de productos.'}
-					link="https://github.com/tuprojecto3"
-					image="public/assets/nikeuno.png"
+					link="/"
+					image="/assets/nikeuno.png"
 				/>
 				</div>
 				</section>
@@ -65,24 +64,24 @@ import 'aos/dist/aos.css';
 				<p class="text-1xl font-semibold text-center pb-0"> ¿Qué es lo que estoy buscando?</p>
 				<div class="grid grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[150px] md:auto-rows-[400px] mt-15">
 					<SkillCard 
-					image="public/assets/potenciar.jpg"
+					image="/assets/potenciar.jpg"
 					title="Potenciar ideas escalables"
 					description="Siempre hay algo para mejorar y llevar el serivcio/prodcuto a otro nivel"
 					spanCols={2}
 					/>
 					<SkillCard 
-					image="public/assets/uxui.jpg"
+					image="/assets/uxui.jpg"
 					title="Diseño UX/UI"
 					description="Mi formación personal va enfocado 100% a mejorar la experiencia del usuario en cada click"
 					/>
 					<SkillCard 
-					image="public/assets/aplicar.jpg"
+					image="/assets/aplicar.jpg"
 					title="Aplicar mis conocimientos"
 					description="Aportar a cada proyecto que tenga cada una de las cosas que aprendí "
 					spanRows={2}
 					/>	
 					<SkillCard 
-					image="public/assets/entorno.jpg"
+					image="/assets/entorno.jpg"
 					title="Colaborar en entornos reales"
 					description="Busco trabajar en contextos que me ayuden a crecer tanto personal como profesionalmente. "
 					/>
@@ -112,7 +111,18 @@ import 'aos/dist/aos.css';
 			</div>
 		</footer>
 
-		<script is:browser type="module" src="/src/scripts/init-aos.js"></script>
+		<script>
+			import AOS from "aos";
+			import "aos/dist/aos.css";
+
+			document.addEventListener('astro:load', () => {
+				AOS.init({
+				duration: 800,
+				once: true,
+				});
+			});
+		</script>
+
 
 
   </body>
