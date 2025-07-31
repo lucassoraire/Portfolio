@@ -7,52 +7,46 @@ const image = "/assets/imglucas1.png";
 <section class="my-16 px-6 max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12 mt-35">
 
   <div class="md:w-1/2 flex flex-col justify-center">
-    <h2 class="text-2xl font-bold text-white mb-4" >Hola! Soy Lucas,</h2>
-    <h1 class="text-3xl font-bold text-white mb-4" >Estudiante de Sistemas.</h1>
-    <p class="text-neutral-400 leading-relaxed" >
+    <h2 class="text-2xl font-bold text-white mb-4" data-aos="fade-down" data-aos-delay="100">Hola! Soy Lucas,</h2>
+    <h1 class="text-3xl font-bold text-white mb-4" data-aos="fade-down" data-aos-delay="100">Estudiante de Sistemas.</h1>
+    <p class="text-neutral-400 leading-relaxed" data-aos="fade-up" data-aos-delay="300">
       Desarrollador en formación con ganas de crear experiencias únicas en la web. Busco que mis proyectos se vean bien, funcionen mejor, y crezcan conmigo. Lo ideal es que el usuario se sienta cómodo.
     </p>
-    
-    <div class="mt-6 flex flex-wrap gap-4" >
-        <a 
-          href="lucascurriculumvitae.pdf"  
-          download 
+
+    <div class="mt-6 flex flex-wrap gap-4" data-aos="zoom-in" data-aos-delay="600">
+        <a
+          href="/Lucas Soraire-Curriculum Vitae.pdf"
+          download
           class="bg-white text-black px-5 py-2 rounded-xl font-semibold shadow-md hover:bg-neutral-200 transition flex items-center gap-2"
         >
           <img src="/icons/descargas.png" alt="CV Icon" width="20" height="20">
           Mi Curriculum
         </a>
 
-        <a 
-          href="https://www.linkedin.com/in/lucas-soraire-920515307" 
-          target="_blank" 
+        <a
+          href="https://www.linkedin.com/in/lucas-soraire-920515307"
+          target="_blank"
           class="text-white hover:text-blue-400 transition flex items-center gap-2 border border-white p-3 rounded-xl"
         >
           <img src="/icons/linkedin.png" alt="LinkedIn Icon" width="20" height="20">
           LinkedIn
         </a>
 
-        <a 
-          href="https://github.com/lucassoraire" 
-          target="_blank" 
+        <a
+          href="https://github.com/lucassoraire"
+          target="_blank"
           class="text-white hover:text-indigo-500 transition flex items-center gap-2 border border-white p-3 rounded-xl"
         >
           <img src="/icons/github.png" alt="LinkedIn Icon" width="20" height="20">
-          Github
+          GitHub
         </a>
     </div>
   </div>
 
+  <div class="md:w-1/2 w-full flex justify-center md:order-2"> {/* Agregado w-full y justify-center para centrarla en móvil */}
+    <img src={image} alt="Lucas Soraire" class="w-full h-auto rounded-xl shadow-lg" data-aos="fade-left" data-aos-delay="500"/> {/* Eliminado md:w-1/2 y mx-auto de la imagen, ya que el div padre lo controla */}
+  </div>
 
-<div 
-  class="w-[532px] h-[295px] rounded-md shadow-[0_0_70px_rgba(59,130,246,0.5)] flex items-center justify-center bg-gradient-to-br from-[#2e3033] via-[#404652] to-[#14203a]" 
->
-  <img 
-    src={image} 
-    alt="Foto de Lucas" 
-    class=" rounded-md"
-  />
-</div>
 </section>
 
 
