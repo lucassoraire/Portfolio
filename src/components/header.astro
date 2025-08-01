@@ -20,13 +20,15 @@ const currentLang = (Astro.url.searchParams.get('lang') ?? 'es') as 'es' | 'en'
   </div>
 
   <!-- Menú Mobile -->
-  <div id="mobile-menu" class="md:hidden hidden flex-col items-center bg-black text-gray-300 font-medium gap-6 py-8">
-    <a href="#aboutme" class="hover:text-sky-900 transition pl-6">Sobre mí</a>
-    <a href="#proyectos" class="hover:text-sky-900 transition pl-6">Proyectos</a>
-    <a href="#objetivos" class="hover:text-sky-900 transition pl-6">Objetivos</a>
-    <a href="#contacto" class="hover:text-sky-900 transition pl-6">Contacto</a>
+  <div id="mobile-menu" class="md:hidden flex flex-col bg-black text-gray-300 font-medium gap-3 py-5 transition-all duration-300 ease-in-out transform opacity-0 -translate-y-4">
+    <a href="#aboutme" class="hover:text-sky-900 transition pl-6"> • Sobre mí</a>
+    <a href="#proyectos" class="hover:text-sky-900 transition pl-6"> • Proyectos</a>
+    <a href="#objetivos" class="hover:text-sky-900 transition pl-6"> • Objetivos</a>
+    <a href="#contacto" class="hover:text-sky-900 transition pl-6"> • Contacto</a>
   </div>
 </header>
+
+
 
 
 
