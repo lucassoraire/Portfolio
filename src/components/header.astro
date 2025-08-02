@@ -1,13 +1,25 @@
 ---
-const currentLang = (Astro.url.searchParams.get('lang') ?? 'es') as 'es' | 'en'
+const currentLang = (Astro.url.searchParams.get("lang") ?? "es") as "es" | "en";
 ---
-<header class="bg-black py-5 px-8 shadow-md fixed top-0 left-0 right-0 z-50 border-b border-opacity-50">
+
+<header
+  class="bg-black py-5 px-8 shadow-md fixed top-0 left-0 right-0 z-50 border-b border-opacity-50"
+>
   <div class="max-w-5xl mx-auto flex justify-between items-center">
     <h1 class="text-2xl font-semibold text-white">Lucas Soraire</h1>
 
     <!-- Botón Hamburguesa -->
-    <button id="menu-toggle" class="md:hidden text-gray-300 focus:outline-none cursor-pointer">
-      <img id="menu-icon" src="/icons/menu.png" alt="Menú" width="32" height="32">
+    <button
+      id="menu-toggle"
+      class="md:hidden text-gray-300 focus:outline-none cursor-pointer"
+    >
+      <img
+        id="menu-icon"
+        src="/icons/menu.png"
+        alt="Menú"
+        width="32"
+        height="32"
+      />
     </button>
 
     <!-- Menú Desktop -->
@@ -20,59 +32,75 @@ const currentLang = (Astro.url.searchParams.get('lang') ?? 'es') as 'es' | 'en'
   </div>
 
   <!-- Menú Mobile -->
-  <div id="mobile-menu" class="hidden md:hidden flex-col bg-black text-gray-300 font-bold gap-3 py-8 pb-1 transition-all duration-900 ease-in transform opacity-0 scale-95 -translate-y-4 items-start">
-    <a href="#aboutme" class="active:bg-white/20 focus:bg-white/20 transition-colors pl-0.5">● Sobre mí </a>
-    <a href="#proyectos" class="active:bg-white/20 focus:bg-white/20 transition-colors pl-0.5">● Proyectos </a>
-    <a href="#objetivos" class="active:bg-white/20 focus:bg-white/20 transition-colors pl-0.5">● Objetivos</a>
-    <a href="#contacto" class="active:bg-white/20 focus:bg-white/20 transition-colors pl-0.5">● Contacto</a>
+  <div
+    id="mobile-menu"
+    class="hidden md:hidden flex-col bg-black text-gray-300 font-bold gap-3 py-8 pb-1 transition-all duration-900 ease-in transform opacity-0 scale-95 -translate-y-4 items-start"
+  >
+    <a
+      href="#aboutme"
+      class="active:bg-white/20 focus:bg-white/20 transition-colors pl-0.5"
+      >● Sobre mí
+    </a>
+    <a
+      href="#proyectos"
+      class="active:bg-white/20 focus:bg-white/20 transition-colors pl-0.5"
+      >● Proyectos
+    </a>
+    <a
+      href="#objetivos"
+      class="active:bg-white/20 focus:bg-white/20 transition-colors pl-0.5"
+      >● Objetivos</a
+    >
+    <a
+      href="#contacto"
+      class="active:bg-white/20 focus:bg-white/20 transition-colors pl-0.5"
+      >● Contacto</a
+    >
   </div>
 </header>
 
 <!-- Script -->
 <script>
-document.addEventListener("DOMContentLoaded", () => {
-  const toggleBtn = document.getElementById("menu-toggle");
-  const menu = document.getElementById("mobile-menu");
-  const icon = document.getElementById("menu-icon") as HTMLImageElement;
+  document.addEventListener("DOMContentLoaded", () => {
+    const toggleBtn = document.getElementById("menu-toggle");
+    const menu = document.getElementById("mobile-menu");
+    const icon = document.getElementById("menu-icon") as HTMLImageElement;
 
-  if (!toggleBtn || !menu || !icon) return;
+    if (!toggleBtn || !menu || !icon) return;
 
-  let menuOpen = false;
+    let menuOpen = false;
 
-  toggleBtn.addEventListener("click", () => {
-    menuOpen = !menuOpen;
+    toggleBtn.addEventListener("click", () => {
+      menuOpen = !menuOpen;
 
-    if (menuOpen) {
-      menu.classList.remove("hidden", "opacity-0","scale-95", "-translate-y-4");
-      menu.classList.add("flex", "opacity-100","scale-100", "translate-y-0");
-      icon.src = "/assets/x.png";
-    } else {
-      menu.classList.remove("flex", "opacity-100","scale-100", "translate-y-0");
-      menu.classList.add("hidden", "opacity-0","scale-95", "-translate-y-4");
-      icon.src = "/icons/menu.png";
-    }
-  });
+      if (menuOpen) {
+        menu.classList.remove(
+          "hidden",
+          "opacity-0",
+          "scale-95",
+          "-translate-y-4"
+        );
+        menu.classList.add("flex", "opacity-100", "scale-100", "translate-y-0");
+        icon.src = "/assets/x.png";
+      } else {
+        menu.classList.remove(
+          "flex",
+          "opacity-100",
+          "scale-100",
+          "translate-y-0"
+        );
+        menu.classList.add("hidden", "opacity-0", "scale-95", "-translate-y-4");
+        icon.src = "/icons/menu.png";
+      }
+    });
 
-  document.querySelectorAll("#mobile-menu a").forEach(link => {
-    link.addEventListener("click", () => {
-      menu.classList.remove("flex", "opacity-100", "translate-y-0");
-      menu.classList.add("hidden", "opacity-0", "-translate-y-4");
-      icon.src = "/icons/menu.png";
-      menuOpen = false;
+    document.querySelectorAll("#mobile-menu a").forEach((link) => {
+      link.addEventListener("click", () => {
+        menu.classList.remove("flex", "opacity-100", "translate-y-0");
+        menu.classList.add("hidden", "opacity-0", "-translate-y-4");
+        icon.src = "/icons/menu.png";
+        menuOpen = false;
+      });
     });
   });
-});
-
-
 </script>
-
-
-
-
-
-
-
-
-
-
-

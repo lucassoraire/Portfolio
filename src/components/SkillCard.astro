@@ -2,24 +2,26 @@
 const { image, title, description, spanCols = 1, spanRows = 1 } = Astro.props;
 ---
 
-<div 
-  class={`relative group overflow-hidden rounded-xl shadow-lg shadow-white/20 col-span-${spanCols} row-span-${spanRows}` } 
+<div
+  class={`relative group overflow-hidden rounded-xl shadow-lg shadow-white/20 col-span-${spanCols} row-span-${spanRows}`}
 >
-  <img 
-    src={image} 
-    alt={title} 
-    class="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105" 
+  <img
+    src={image}
+    alt={title}
+    class="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
   />
 
-  <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-center items-center text-white p-4 text-center">
+  <div
+    class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-center items-center text-white p-4 text-center"
+  >
     <h3 class="text-xl font-semibold mb-2">{title}</h3>
     <p class="text-sm">{description}</p>
   </div>
 </div>
-      
-      
-      <p class="block md:hidden text-sm font-semibold flex justify-center items-center h-full">
-        - {title} -  <br>
-        {description}
-      </p>
-      
+
+<p
+  class="block md:hidden text-sm font-semibold flex justify-center items-center h-full"
+>
+  - {title} - <br />
+  {description}
+</p>

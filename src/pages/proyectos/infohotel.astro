@@ -1,133 +1,192 @@
 ---
-import '../../styles/global.css';
-import Index from '../index.astro';
-import GaleriaItem from '../../components/GaleriaItem.astro';
-// client:only importa un componente que solo corre del lado del navegador
-import ScrollEffect from '../../components/ScrollEffect';
+import "../../styles/global.css";
+import Index from "../index.astro";
+import GaleriaItem from "../../components/GaleriaItem.astro";
 ---
 
 <html lang="es">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width" />
-        <meta name="generator" content={Astro.generator} />
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-        <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
-        <title>Proyectos - Hotel Niluma</title>
-    </head>
-    <body>
-      <main data-scroll-container>
-          <section class="w-full min-h-screen flex flex-col justify-end pb-24 px-6 md:px-12 text-white bg-cover bg-center bg-no-repeat" style="background-image: url('/assets/hotelnilumauno.png')">
-            <h1 class="text-6xl md:text-8xl font-bold leading-tight">Hotel Niluma</h1>
-            <p class="text-xl md:text-2xl max-w-2xl mt-6 opacity-80">Una experiencia de diseño web elegante y funcional para un hotel boutique.</p>
-          </section>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+      rel="stylesheet"
+    />
+    <title>Proyectos - Hotel Niluma</title>
+  </head>
+  <body>
+    <main>
+      <section
+        class="w-full min-h-screen flex flex-col justify-end pb-24 px-6 md:px-12 text-white bg-cover bg-center bg-no-repeat"
+        style="background-image: url('/assets/hotelnilumauno.png')"
+      >
+        <h1 class="text-6xl md:text-8xl font-bold leading-tight">
+          Hotel Niluma
+        </h1>
+        <p class="text-xl md:text-2xl max-w-2xl mt-6 opacity-80">
+          Una experiencia de diseño web elegante y funcional para un hotel
+          boutique.
+        </p>
+      </section>
 
-          <section class="grid grid-cols-1 md:grid-cols-2 gap-4 px-6 py-12 bg-amber-950">
-  
-  
-              <div class="relative group rounded-xl overflow-hidden">
-                <img src="/assets/imgnilumahome.png" 
-                    class="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105" 
-                    />
-                <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-center items-center text-white p-4 text-center">
-                  <h2 class="text-3xl font-semibold mb-2">Home de Hotel Niluma</h2>
-                  
-                </div>
-              </div>
+      <section
+        class="grid grid-cols-1 md:grid-cols-2 gap-4 px-6 py-12 bg-amber-950"
+      >
+        <div class="relative group rounded-xl overflow-hidden">
+          <img
+            src="/assets/imgnilumahome.png"
+            class="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
+          />
+          <div
+            class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-center items-center text-white p-4 text-center"
+          >
+            <h2 class="text-3xl font-semibold mb-2">Home de Hotel Niluma</h2>
+          </div>
+        </div>
 
-              <div class="relative group rounded-xl overflow-hidden">
-              <img src="/assets/imgnilumarooms.png" class="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105" />
+        <div class="relative group rounded-xl overflow-hidden">
+          <img
+            src="/assets/imgnilumarooms.png"
+            class="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
+          />
 
-              <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-center items-center text-white p-4 text-center">
-                  <h2 class="text-3xl font-semibold mb-2">Sección de habitaciones de Hotel Niluma</h2>
-                  
-                </div>
-              </div>
+          <div
+            class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-center items-center text-white p-4 text-center"
+          >
+            <h2 class="text-3xl font-semibold mb-2">
+              Sección de habitaciones de Hotel Niluma
+            </h2>
+          </div>
+        </div>
 
-              <div class="relative group rounded-xl overflow-hidden">
-              <img src="/assets/imgnilumadash.png" class="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105" />
+        <div class="relative group rounded-xl overflow-hidden">
+          <img
+            src="/assets/imgnilumadash.png"
+            class="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
+          />
 
-              <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-center items-center text-white p-4 text-center">
-                  <h2 class="text-3xl font-semibold mb-2">Dashboard de administrador en Hotel Niluma</h2>
-                  
-                </div>
+          <div
+            class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-center items-center text-white p-4 text-center"
+          >
+            <h2 class="text-3xl font-semibold mb-2">
+              Dashboard de administrador en Hotel Niluma
+            </h2>
+          </div>
+        </div>
 
-              </div>
+        <div class="relative group rounded-xl overflow-hidden">
+          <img
+            src="/assets/imgnilumareservas.png"
+            class="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
+          />
 
-              <div class="relative group rounded-xl overflow-hidden">
-              <img src="/assets/imgnilumareservas.png" class="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105" />
+          <div
+            class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-center items-center text-white p-4 text-center"
+          >
+            <h2 class="text-3xl font-semibold mb-2">
+              View de reservas en Hotel Niluma
+            </h2>
+          </div>
+        </div>
+      </section>
 
-              <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-center items-center text-white p-4 text-center">
-                  <h2 class="text-3xl font-semibold mb-2">View de reservas en Hotel Niluma</h2>
-                  
-                </div>
+      <section class="px-6 md:px-12 py-16 space-y-12 bg-neutral-900 text-white">
+        <div>
+          <h2 class="text-3xl font-semibold mb-4">01. Diseño Visual</h2>
+          <p class="text-lg opacity-80">
+            El sitio del Hotel Niluma se desarrolló con una estructura clara y
+            moderna, cuidando la experiencia del usuario y la visual en cada
+            sección.
+          </p>
+        </div>
+        <div>
+          <h2 class="text-3xl font-semibold mb-4">02. Interfaz responsive</h2>
+          <p class="text-lg opacity-80">
+            Un diseño completamente adaptable a dispositivos móviles, con
+            estructura clara, navegación fluida y formularios optimizados.
+          </p>
+        </div>
+        <div>
+          <h2 class="text-3xl font-semibold mb-4">03. Desarrollo Backend</h2>
+          <p class="text-lg opacity-80">
+            Construido con Laravel, el proyecto conecta con una base de datos
+            MySQL para gestionar usuarios, habitaciones, sucursales y reservas,
+            garantizando integridad y seguridad en los datos.
+          </p>
+        </div>
+        <div>
+          <h2 class="text-3xl font-semibold mb-4">04. Sistema de Reservas</h2>
+          <p class="text-lg opacity-80">
+            Incluye un sistema completo de login, registro y reservas. Los
+            usuarios pueden consultar disponibilidad, y el sistema administra
+            los datos y validaciones con lógica backend y formularios
+            intuitivos.
+          </p>
+        </div>
+        <!-- Más bloques -->
+      </section>
 
-              </div>
+      <section class="px-6 md:px-12 py-16 bg-white text-black">
+        <h2 class="text-3xl font-bold mb-8">Tecnologías e implementaciones</h2>
+        <ul class="grid grid-cols-2 md:grid-cols-4 gap-6 text-lg font-medium">
+          <li
+            class="flex items-center gap-2 px-3 py-3 border border-amber-950 rounded-xl text-sm font-medium w-fit bg-white/5"
+          >
+            <img src="/assets/html.png" alt="" />HTML5
+          </li>
+          <li
+            class="flex items-center gap-2 px-3 py-3 border border-amber-950 rounded-xl text-sm font-medium w-fit bg-white/5"
+          >
+            <img src="/assets/css.png" alt="" />CSS
+          </li>
+          <li
+            class="flex items-center gap-2 px-3 py-3 border border-amber-950 rounded-xl text-sm font-medium w-fit bg-white/5"
+          >
+            <img src="/assets/interfaz.png" alt="" />Diseño responsivo
+          </li>
+          <li
+            class="flex items-center gap-2 px-3 py-3 border border-amber-950 rounded-xl text-sm font-medium w-fit bg-white/5"
+          >
+            <img src="/assets/interfaz-ux.png" alt="" />UX/UI
+          </li>
+          <li
+            class="flex items-center gap-2 px-3 py-3 border border-amber-950 rounded-xl text-sm font-medium w-fit bg-white/5"
+          >
+            <img src="/assets/bdd.png" alt="" />Sistema de Reservas
+          </li>
+          <li
+            class="flex items-center gap-2 px-3 py-3 border border-amber-950 rounded-xl text-sm font-medium w-fit bg-white/5"
+          >
+            <img src="/assets/laravel.png" alt="" />Laravel
+          </li>
+        </ul>
+      </section>
 
-            
-          </section>
+      <section class="bg-black text-white py-12 text-center">
+        <h2 class="text-3xl font-semibold">¿Te gustó Niluma?</h2>
+        <p class="opacity-80 mt-2">
+          Conectemos y llevemos tu próximo proyecto al siguiente nivel.
+        </p>
+        <a
+          href="/#contacto"
+          class="mt-4 inline-block bg-white text-black px-6 py-3 rounded-xl font-bold"
+          >Contacto</a
+        >
+        <a
+          href="/#proyectos"
+          class="mt-4 inline-block bg-transparent text-white border border-r-sky-600 hover:bg-sky-600 hover:text-black hover:border-r-sky-600 px-6 py-3 rounded-xl font-bold"
+          >Seguir mirando proyectos</a
+        >
+      </section>
+    </main>
 
-
-          <section class="px-6 md:px-12 py-16 space-y-12 bg-neutral-900 text-white">
-            <div >
-              <h2 class="text-3xl font-semibold mb-4">01. Diseño Visual</h2>
-              <p class="text-lg opacity-80">El sitio del Hotel Niluma se desarrolló con una estructura clara y moderna, cuidando la experiencia del usuario y la visual en cada sección.</p>
-            </div>
-            <div  >
-              <h2 class="text-3xl font-semibold mb-4">02. Interfaz responsive</h2>
-              <p class="text-lg opacity-80">Un diseño completamente adaptable a dispositivos móviles, con estructura clara, navegación fluida y formularios optimizados.</p>
-            </div>
-            <div >
-              <h2 class="text-3xl font-semibold mb-4" >03. Desarrollo Backend</h2>
-              <p class="text-lg opacity-80">Construido con Laravel, el proyecto conecta con una base de datos MySQL para gestionar usuarios, habitaciones, sucursales y reservas, garantizando integridad y seguridad en los datos.</p>
-            </div>
-            <div  >
-              <h2 class="text-3xl font-semibold mb-4">04. Sistema de Reservas</h2>
-              <p class="text-lg opacity-80">Incluye un sistema completo de login, registro y reservas. Los usuarios pueden consultar disponibilidad, y el sistema administra los datos y validaciones con lógica backend y formularios intuitivos.</p>
-            </div>
-            <!-- Más bloques -->
-          </section>
-
-          <section class="px-6 md:px-12 py-16 bg-white text-black">
-            <h2 class="text-3xl font-bold mb-8">Tecnologías e implementaciones</h2>
-            <ul class="grid grid-cols-2 md:grid-cols-4 gap-6 text-lg font-medium">
-              <li class="flex items-center gap-2 px-3 py-3 border border-amber-950 rounded-xl text-sm font-medium w-fit bg-white/5">
-                <img src="/assets/html.png" alt="">HTML5
-              </li>
-              <li class="flex items-center gap-2 px-3 py-3 border border-amber-950 rounded-xl text-sm font-medium w-fit bg-white/5">
-                <img src="/assets/css.png" alt="">CSS
-              </li>
-              <li class="flex items-center gap-2 px-3 py-3 border border-amber-950 rounded-xl text-sm font-medium w-fit bg-white/5">
-                <img src="/assets/interfaz.png" alt="">Diseño responsivo
-              </li>
-              <li class="flex items-center gap-2 px-3 py-3 border border-amber-950 rounded-xl text-sm font-medium w-fit bg-white/5">
-                <img src="/assets/interfaz-ux.png" alt="">UX/UI
-              </li>
-              <li class="flex items-center gap-2 px-3 py-3 border border-amber-950 rounded-xl text-sm font-medium w-fit bg-white/5">
-                <img src="/assets/bdd.png" alt="">Sistema de Reservas
-              </li>
-              <li class="flex items-center gap-2 px-3 py-3 border border-amber-950 rounded-xl text-sm font-medium w-fit bg-white/5">
-                <img src="/assets/laravel.png" alt="">Laravel
-              </li>
-            </ul>
-          </section>
-
-          <section class="bg-black text-white py-12 text-center">
-            <h2 class="text-3xl font-semibold">¿Te gustó Niluma?</h2>
-            <p class="opacity-80 mt-2">Conectemos y llevemos tu próximo proyecto al siguiente nivel.</p>
-            <a href="/#contacto" class="mt-4 inline-block bg-white text-black px-6 py-3 rounded-xl font-bold">Contacto</a>
-            <a href="/#proyectos" class="mt-4 inline-block bg-transparent text-white border border-r-sky-600 hover:bg-sky-600 hover:text-black hover:border-r-sky-600 px-6 py-3 rounded-xl font-bold">Seguir mirando proyectos</a>
-          </section>
-        </main>
-
-          <script type="module" src="/src/scripts/init-aos.js"></script>
-          <ScrollEffect client:only="react" />
-    </body>
+    <script type="module" src="/src/scripts/init-aos.js"></script>
+  </body>
 </html>
-
-
-  
-
-
