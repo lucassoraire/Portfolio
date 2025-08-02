@@ -23,22 +23,33 @@ import GaleriaItem from "../../components/GaleriaItem.astro";
   </head>
   <body>
     <main>
-      <section
-        class="w-full min-h-screen flex flex-col justify-end pb-24 px-6 md:px-12 text-white bg-cover bg-center bg-no-repeat"
-        style="background-image: url('/assets/hotelnilumauno.png')"
-      >
-        <h1 class="text-6xl md:text-8xl font-bold leading-tight">
-          Hotel Niluma
-        </h1>
-        <p class="text-xl md:text-2xl max-w-2xl mt-6 opacity-80">
-          Una experiencia de diseño web elegante y funcional para un hotel
-          boutique.
-        </p>
-      </section>
+
+        <section
+          class="w-full min-h-screen flex flex-col justify-end px-6 md:px-12 pb-12 text-white bg-cover bg-center bg-no-repeat"
+          style="background-image: url('/assets/hotelnilumauno.png')"
+        >
+          <!-- Contenedor interno para el contenido -->
+          <div class="space-y-6">
+            <h1 class="text-6xl md:text-8xl font-bold leading-tight">
+              Hotel Niluma
+            </h1>
+            <p class="text-xl md:text-2xl max-w-2xl opacity-80">
+              Una experiencia de diseño web elegante y funcional para un hotel
+              boutique.
+            </p>
+            <div class="text-center font-light mt-10">
+              <p>Scrolleá para ver más</p>
+              <div class="flex justify-center mt-1">
+                <img src="/assets/flechadown.png" alt="" class="w-6 h-6 animate-bounce" />
+              </div>
+            </div>
+          </div>
+        </section>
 
       <section
         class="grid grid-cols-1 md:grid-cols-2 gap-4 px-6 py-12 bg-amber-950"
       >
+        <h3 class="block md:hidden font-semibold text-center text-white text-sm"> - Home de Hotel Niluma - </h3>
         <div class="relative group rounded-xl overflow-hidden">
           <img
             src="/assets/imgnilumahome.png"
@@ -51,47 +62,47 @@ import GaleriaItem from "../../components/GaleriaItem.astro";
           </div>
         </div>
 
+        <h3 class="block md:hidden font-semibold text-center text-white text-sm"> - View de habitaciones - </h3>
         <div class="relative group rounded-xl overflow-hidden">
           <img
             src="/assets/imgnilumarooms.png"
             class="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
           />
-
           <div
             class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-center items-center text-white p-4 text-center"
           >
             <h2 class="text-3xl font-semibold mb-2">
-              Sección de habitaciones de Hotel Niluma
+              View de habitaciones
             </h2>
           </div>
         </div>
 
+        <h3 class="block md:hidden font-semibold text-center text-white text-sm"> - Dashboard de administrador - </h3>
         <div class="relative group rounded-xl overflow-hidden">
           <img
             src="/assets/imgnilumadash.png"
             class="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
           />
-
           <div
             class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-center items-center text-white p-4 text-center"
           >
             <h2 class="text-3xl font-semibold mb-2">
-              Dashboard de administrador en Hotel Niluma
+              Dashboard de administrador
             </h2>
           </div>
         </div>
 
+        <h3 class="block md:hidden font-semibold text-center text-white text-sm"> - View de reservas - </h3>
         <div class="relative group rounded-xl overflow-hidden">
           <img
             src="/assets/imgnilumareservas.png"
             class="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
           />
-
           <div
             class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-center items-center text-white p-4 text-center"
           >
             <h2 class="text-3xl font-semibold mb-2">
-              View de reservas en Hotel Niluma
+              View de reservas
             </h2>
           </div>
         </div>

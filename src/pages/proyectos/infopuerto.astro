@@ -123,16 +123,24 @@ import GaleriaItem from "../../components/GaleriaItem.astro";
         <p class="opacity-80 mt-2">
           Conectemos y llevemos tu próximo proyecto al siguiente nivel.
         </p>
-        <a
-          href="/#contacto"
-          class="mt-4 inline-block bg-white text-black px-6 py-3 rounded-xl font-bold"
-          >Contacto</a
+        <div
+          class="flex flex-col md:flex-row items-center justify-center gap-4 mt-4"
         >
-        <a
-          href="/#proyectos"
-          class="mt-4 inline-block bg-transparent text-white border border-r-sky-600 hover:bg-sky-600 hover:text-black hover:border-r-sky-600 px-6 py-3 rounded-xl font-bold"
-          >Seguir mirando proyectos</a
-        >
+          <a
+            href="/#contacto"
+            class="bg-white text-black px-6 py-2.5 rounded-xl font-bold text-center"
+          >
+            Contacto
+          </a>
+
+          <a
+            href="/#proyectos"
+            class="flex items-center justify-center bg-transparent text-white border border-sky-600 hover:bg-sky-600 hover:text-black px-6 py-2.5 rounded-xl font-bold text-center"
+          >
+            Seguir mirando proyectos
+            <img src="/assets/foto.png" alt="" class="w-5 h-5 ml-2" />
+          </a>
+        </div>
       </section>
     </main>
     <script type="module" src="/src/scripts/init-aos.js"></script>
