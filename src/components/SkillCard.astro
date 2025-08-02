@@ -17,6 +17,9 @@ const { image, title, description, spanCols = 1, spanRows = 1 } = Astro.props;
   </div>
 </div>
       
-      <div class="flex justify-center items-center h-full">
-      <p class="block md:hidden text-sm font-semibold">{description}</p>
-      </div>
+      
+      <p class="block md:hidden text-sm font-semibold flex justify-center items-center h-full">
+        - {title} -  <br>
+        {description}
+      </p>
+      
