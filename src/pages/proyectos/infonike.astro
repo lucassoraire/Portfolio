@@ -2,7 +2,8 @@
 import '../../styles/global.css';
 import Index from '../index.astro';
 import GaleriaItem from '../../components/GaleriaItem.astro';
-
+// client:only importa un componente que solo corre del lado del navegador
+import ScrollEffect from '../../components/ScrollEffect';
 ---
 
 <html lang="es">
@@ -17,6 +18,7 @@ import GaleriaItem from '../../components/GaleriaItem.astro';
         <title>Proyectos - Web Nike</title>
     </head>
     <body>
+      <main data-scroll-container>
           <section class="w-full min-h-screen flex flex-col justify-end pb-24 px-6 md:px-12 text-white bg-cover bg-center bg-no-repeat" style="background-image: url('/assets/imgnikefirst.png')">
             <h1 class="text-6xl md:text-8xl font-bold leading-tight" >Web Nike</h1>
             <p class="text-xl md:text-2xl max-w-2xl mt-6 opacity-80" >Una web simple con temática de la marca Nike, tipografía, colores y productos.</p>
@@ -79,9 +81,8 @@ import GaleriaItem from '../../components/GaleriaItem.astro';
             <a href="/#contacto" class="mt-4 inline-block bg-white text-black px-6 py-3 rounded-xl font-bold">Contacto</a>
             <a href="/#proyectos" class="mt-4 inline-block bg-transparent text-white border border-r-sky-600 hover:bg-sky-600 hover:text-black hover:border-r-sky-600 px-6 py-3 rounded-xl font-bold">Seguir mirando proyectos</a>
           </section>
-
-
-
+        </main>
           <script type="module" src="/src/scripts/init-aos.js"></script>
+          <ScrollEffect client:only="react" />
     </body>
 </html>

@@ -7,9 +7,8 @@ import SkillCard from '../components/SkillCard.astro';
 import Contact from '../components/Contact.astro'
 import '../styles/global.css';
 import 'aos/dist/aos.css';
-
-
-
+// client:only importa un componente que solo corre del lado del navegador
+import ScrollEffect from '../components/ScrollEffect.jsx';
 ---
 
 <html lang="es">
@@ -25,7 +24,7 @@ import 'aos/dist/aos.css';
 </head>
   <body class="bg-black text-gray-100 font-sans">
 	<Header />
-    <main class="pt-15">
+    <main class="pt-15" data-scroll-container>
 			<section id="aboutme" class="scroll-mt-40 overflow-x-hidden">
 			<Aboutme 
 			image= "/assets/imglucas.png"
@@ -94,8 +93,6 @@ import 'aos/dist/aos.css';
 				</section>
 
 
-    </main>
-
 		<footer class="bg-white py-8 mt-16">
 			<div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-white-700">
 
@@ -112,6 +109,10 @@ import 'aos/dist/aos.css';
 			</div>
 		</footer>
 
+    </main>
+
+		
+
 		<script is:inline>
 			if (typeof window !== "undefined") {
 				import('aos').then(AOS => {
@@ -119,6 +120,7 @@ import 'aos/dist/aos.css';
 				});
 			}
 		</script>	
+		<ScrollEffect client:only="react" />
 
 
 

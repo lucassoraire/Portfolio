@@ -1,11 +1,15 @@
 @import "tailwindcss";
 
-html {
+html , body {
   scroll-behavior: smooth;
-}
-
-body {
+    height: 100%;
+  overflow: hidden;
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
-  @apply bg-black font-sans min-h-screen;
+  @apply bg-black font-sans;
+}
+
+
+[data-scroll-container] {
+  will-change: transform;
 }
