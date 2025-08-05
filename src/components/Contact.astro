@@ -2,7 +2,7 @@
 // src/components/Contact.astro
 ---
 
-<section class="px-6 py-16 max-w-4xl mx-auto text-white mt-20">
+<section class="px-6 py-16 max-w-4xl mx-auto text-white mt-20 ">
   <h2 class="text-3xl font-bold mb-8 text-center">
     Hablemos si te interesa <span class="text-sky-600">potenciar</span> tus ideas!
   </h2>
@@ -22,6 +22,7 @@
         placeholder="Tu nombre"
       />
     </div>
+    <p id="error-name" class="text-red-500 text-sm hidden">Este campo es obligatorio</p>
 
     <div>
       <label for="email" class="block mb-2 text-sm">Correo</label>
@@ -33,6 +34,8 @@
         placeholder="tucorreo@ejemplo.com"
       />
     </div>
+    <p id="error-email" class="text-red-500 text-sm hidden">Ingresá un correo válido</p>
+
 
     <div>
       <label for="message" class="block mb-2 text-sm">Mensaje</label>
@@ -43,6 +46,11 @@
         class="w-full bg-neutral-900 border border-neutral-700 rounded-lg p-3 text-white placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-sky-600"
         placeholder="Mensaje..."></textarea>
     </div>
+    <p id="error-message" class="text-red-500 text-sm hidden">Este campo es obligatorio</p>
+
+    <p id="form-succes" class="text-green-400 font-semibold hidden text-medium text-center">
+      Gracias por tu mensaje, te responderé a la brevedad.
+    </p>
 
     <button
       type="submit"
@@ -51,8 +59,103 @@
       Enviar mensaje <img src="/assets/avion.png" alt="" class="inline-block pl-2" width="32" height="32">
     </button>
 
-    <p id="form-succes" class="text-green-400 font-light hidden text-sm">
-      Gracias por tu mensaje
-    </p>
   </form>
 </section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const form = document.querySelector("form");
+    const successMessage = document.getElementById("form-succes");
+
+    if (!form || !successMessage) return;
+
+    const errorName = document.getElementById("error-name");
+    const errorEmail = document.getElementById("error-email");
+    const errorMessage = document.getElementById("error-message");
+
+    if (!errorName || !errorEmail || !errorMessage) return;
+
+const fields = {
+    name: {
+    input: form.elements.namedItem("name") as HTMLInputElement,
+    error: errorName,
+    validate: (value: string) => value.trim() !== "",
+    message: "Este campo es obligatorio"
+  },
+  email: {
+    input: form.elements.namedItem("email") as HTMLInputElement,
+    error: errorEmail,
+    validate: (value: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value),
+    message: "Ingresá un correo válido"
+  },
+  message: {
+    input: form.elements.namedItem("message") as HTMLTextAreaElement,
+    error: errorMessage,
+    validate: (value: string) => value.trim() !== "",
+    message: "Este campo es obligatorio"
+  }
+};
+
+
+    // Validación en tiempo real
+    Object.values(fields).forEach(({ input, error, validate, message }) => {
+      if (!input) return;
+      input.addEventListener("input", () => {
+        const value = input.value;
+        if (validate(value)) {
+          error.classList.add("hidden");
+        } else {
+          error.textContent = message;
+          error.classList.remove("hidden");
+        }
+      });
+    });
+
+    // Validación al enviar
+    form.addEventListener("submit", async function (e) {
+      e.preventDefault();
+
+      let hasError = false;
+
+      Object.values(fields).forEach(({ input, error, validate, message }) => {
+        if (!input) return;
+        const value = input.value;
+        if (!validate(value)) {
+          error.textContent = message;
+          error.classList.remove("hidden");
+          hasError = true;
+        } else {
+          error.classList.add("hidden");
+        }
+      });
+
+      if (hasError) return;
+
+      const formData = new FormData(form);
+      try {
+        const response = await fetch(form.action, {
+          method: form.method,
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+
+        if (response.ok) {
+          form.reset();
+          successMessage.classList.remove("hidden");
+
+          setTimeout(() => {
+            successMessage.classList.add("hidden");
+          }, 5000);
+        } else {
+          alert("Error al enviar el formulario.");
+        }
+      } catch (err) {
+        alert("Error de conexión.");
+      }
+    });
+  });
+</script>
+
+

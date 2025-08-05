@@ -32,75 +32,92 @@ const currentLang = (Astro.url.searchParams.get("lang") ?? "es") as "es" | "en";
   </div>
 
   <!-- Menú Mobile -->
-  <div
-    id="mobile-menu"
-    class="hidden md:hidden flex-col bg-black text-gray-300 font-bold gap-3 py-8 pb-1 transition-all duration-900 ease-in transform opacity-0 scale-95 -translate-y-4 items-start"
-  >
-    <a
-      href="#aboutme"
-      class="active:bg-white/20 focus:bg-white/20 transition-colors pl-0.5"
-      >● Sobre mí
-    </a>
-    <a
-      href="#proyectos"
-      class="active:bg-white/20 focus:bg-white/20 transition-colors pl-0.5"
-      >● Proyectos
-    </a>
-    <a
-      href="#objetivos"
-      class="active:bg-white/20 focus:bg-white/20 transition-colors pl-0.5"
-      >● Objetivos</a
-    >
-    <a
-      href="#contacto"
-      class="active:bg-white/20 focus:bg-white/20 transition-colors pl-0.5"
-      >● Contacto</a
-    >
+<div
+  id="mobile-menu"
+  class="fixed top-0 right-0 left-auto h-screen w-64 bg-black text-gray-300 font-bold py-8 pb-1 flex flex-col gap-6 px-6 z-50 menu-closed text-end"
+>
+  <a href="#aboutme" class="block hover:text-sky-600 transition-colors text-lg pb-0.5 pt-10">Sobre mí</a>
+  <a href="#proyectos" class="block hover:text-sky-600 transition-colors text-lg pb-0.5">Proyectos</a>
+  <a href="#objetivos" class="block hover:text-sky-600 transition-colors text-lg pb-0.5">Objetivos</a>
+  <a href="#contacto" class="block hover:text-sky-600 transition-colors text-lg pb-0.5">Contacto</a>
+   <div class="mt-auto text-sm text-center text-gray-500 pb-3">
+    lucassoraire.dev 💻 
   </div>
+</div>
 </header>
 
 <!-- Script -->
 <script>
   document.addEventListener("DOMContentLoaded", () => {
-    const toggleBtn = document.getElementById("menu-toggle");
-    const menu = document.getElementById("mobile-menu");
-    const icon = document.getElementById("menu-icon") as HTMLImageElement;
+  const toggleBtn = document.getElementById("menu-toggle");
+  const menu = document.getElementById("mobile-menu");
+  const icon = document.getElementById("menu-icon");
 
-    if (!toggleBtn || !menu || !icon) return;
+  if (!toggleBtn || !menu || !icon) return;
 
-    let menuOpen = false;
+  let menuOpen = false;
 
-    toggleBtn.addEventListener("click", () => {
-      menuOpen = !menuOpen;
+  // Inicializar links ocultos para animar
+  const links = menu.querySelectorAll("a");
+  links.forEach(link => {
+    link.style.opacity = "0";
+    link.style.transform = "translateX(-20px)";
+    link.style.transition = "opacity 0.3s ease, transform 0.3s ease";
+  });
 
-      if (menuOpen) {
-        menu.classList.remove(
-          "hidden",
-          "opacity-0",
-          "scale-95",
-          "-translate-y-4"
-        );
-        menu.classList.add("flex", "opacity-100", "scale-100", "translate-y-0");
-        icon.src = "/assets/x.png";
-      } else {
-        menu.classList.remove(
-          "flex",
-          "opacity-100",
-          "scale-100",
-          "translate-y-0"
-        );
-        menu.classList.add("hidden", "opacity-0", "scale-95", "-translate-y-4");
-        icon.src = "/icons/menu.png";
-      }
-    });
+  toggleBtn.addEventListener("click", () => {
+    menuOpen = !menuOpen;
 
-    document.querySelectorAll("#mobile-menu a").forEach((link) => {
-      link.addEventListener("click", () => {
-        menu.classList.remove("flex", "opacity-100", "translate-y-0");
-        menu.classList.add("hidden", "opacity-0", "-translate-y-4");
-        icon.src = "/icons/menu.png";
-        menuOpen = false;
+    if (menuOpen) {
+      menu.classList.remove("menu-closed");
+      menu.classList.add("menu-open");
+
+      // Animar links con delay
+      links.forEach((link, i) => {
+        setTimeout(() => {
+          link.style.opacity = "1";
+          link.style.transform = "translateX(0)";
+        }, i * 100 + 300);
       });
+
+      // Animar icono
+      icon.classList.add("rotate-90");
+      setTimeout(() => {
+        icon.src = "/assets/x.png";
+        icon.classList.remove("rotate-90");
+      }, 200);
+    } else {
+      menu.classList.remove("menu-open");
+      menu.classList.add("menu-closed");
+
+      // Ocultar links rápido
+      links.forEach(link => {
+        link.style.opacity = "0";
+        link.style.transform = "translateX(-20px)";
+      });
+
+      icon.classList.add("rotate-90");
+      setTimeout(() => {
+        icon.src = "/icons/menu.png";
+        icon.classList.remove("rotate-90");
+      }, 200);
+    }
+  });
+
+  // Cerrar menú al click en link
+  links.forEach(link => {
+    link.addEventListener("click", () => {
+      menu.classList.remove("menu-open");
+      menu.classList.add("menu-closed");
+      links.forEach(link => {
+        link.style.opacity = "0";
+        link.style.transform = "translateX(-20px)";
+      });
+      icon.src = "/icons/menu.png";
+      menuOpen = false;
     });
   });
+});
+
+
 </script>

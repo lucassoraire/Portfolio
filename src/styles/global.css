@@ -7,5 +7,43 @@ html , body {
   @apply bg-black font-sans;
 }
 
+#menu-icon.rotate-90 {
+  transition: transform 0.3s ease;
+  transform: rotate(90deg);
+}
+
+.menu-closed {
+  transform: translateX(100%);
+  opacity: 0;
+  pointer-events: none; /* para que no moleste */
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+/* menú abierto: visible en su lugar */
+.menu-open {
+  transform: translateX(0);
+  opacity: 1;
+  pointer-events: auto;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  
+}
+
+#menu-toggle {
+  position: relative; /* para que z-index funcione */
+  z-index: 60; /* más alto que el menú */
+  
+}
+
+#mobile-menu {
+  z-index: 50;
+
+}
+
+header {
+  position: fixed;
+  z-index: 70; /* más que menú y botón */
+  width: 100%;
+}
+
 
 
