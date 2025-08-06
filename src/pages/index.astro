@@ -6,7 +6,7 @@ import ProjectCard from "../components/ProjectCard.astro";
 import SkillCard from "../components/SkillCard.astro";
 import Contact from "../components/Contact.astro";
 import "../styles/global.css";
-import "aos/dist/aos.css";
+
 // client:only importa un componente que solo corre del lado del navegador
 //import ScrollEffect from '../components/ScrollEffect.jsx';
 ---
@@ -122,12 +122,7 @@ import "aos/dist/aos.css";
       </footer>
     </main>
 
-    <script is:inline>
-      if (typeof window !== "undefined") {
-        import("aos").then((AOS) => {
-          AOS.init();
-        });
-      }
-    </script>
+    <script type="module" src="/scripts/init-aos.js"></script>
+
   </body>
 </html>
