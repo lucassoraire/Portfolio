@@ -7,6 +7,7 @@ import SkillCard from "../components/SkillCard.astro";
 import Contact from "../components/Contact.astro";
 import "../styles/global.css";
 
+
 // client:only importa un componente que solo corre del lado del navegador
 //import ScrollEffect from '../components/ScrollEffect.jsx';
 ---
@@ -27,10 +28,12 @@ import "../styles/global.css";
   <body class="bg-black text-gray-100 font-sans">
     <Header />
     <main class="pt-15">
+
       <section id="aboutme" class="scroll-mt-40 overflow-x-hidden sm:mt-0">
         <Aboutme image="/assets/imglucas.png" />
         <Stats />
       </section>
+
       <h2 class="text-3xl font-bold mb-8 text-center mt-20">
         Mirá algunos de mis <span class="text-sky-600">proyectos</span>
       </h2>
@@ -65,17 +68,17 @@ import "../styles/global.css";
       </section>
 
       <section class="max-w-6xl mx-auto px-6 py-16 scroll-mt-5" id="objetivos">
-        <h2 class="text-3xl font-bold mb-3 text-center">Objetivos</h2>
-        <p class="text-1xl font-semibold text-center pb-0">
+        <h2 class="text-3xl font-bold mb-3 text-center mt-2">Objetivos</h2>
+        <p class="text-1xl font-semibold text-center pb-0 mb-0">
           ¿Qué es lo que estoy <span class="text-sky-600">buscando</span> ?
         </p>
         <div
-          class="grid grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[150px] md:auto-rows-[400px] mt-15"
+          class="grid grid-cols-1 md:grid-cols-1 gap-8 auto-rows-[150px] md:auto-rows-[400px] mt-15 "
         >
           <SkillCard
             image="/assets/potenciar.jpg"
             title="Potenciar ideas escalables"
-            description="Siempre hay algo para mejorar y llevar el serivcio/prodcuto a otro nivel."
+            description="Siempre hay algo para mejorar y llevar el serivcio/producto a otro nivel."
             spanCols={2}
           />
           <SkillCard
