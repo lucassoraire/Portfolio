@@ -2,7 +2,7 @@
 const { image, title, description, spanCols = 1, spanRows = 1 } = Astro.props;
 ---
 
-<div class="md:hidden px-4 text-start text-white mt-20 mb-0">
+<div class="md:hidden px-4 text-start text-white mt-20 border border-r-amber-50 border-b-0 pt-0.5 rounded-tl-xl rounded-tr-xl">
   <h3 class="text-xl font-semibold">{title}</h3>
   <p class="text-base font-light mt-1">{description}</p>
 </div>
