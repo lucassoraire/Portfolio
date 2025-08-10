@@ -9,27 +9,27 @@ const { image, title, description, spanCols = 1, spanRows = 1 } = Astro.props;
   <img
     src={image}
     alt={title}
-    class="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105"
+    class="object-cover w-full h-full transition-transform duration-500 group-hover:scale-120"
   />
 
-  <!-- Fondo oscuro en hover -->
+
   <div
     class="absolute inset-0 bg-black/40 transition-opacity duration-500 group-hover:bg-black/60"
   >
   </div>
 
-  <!-- Contenido centrado siempre -->
+
   <div
     class="absolute inset-0 flex flex-col justify-center items-center text-center text-white p-4
            transition-all duration-500 ease-out"
   >
     <h3
-      class="text-3xl font-semibold transition-all duration-500 group-hover:text-5xl group-hover:mb-2"
+      class="text-3xl font-semibold transition-all duration-500 group-hover:text-6xl group-hover:mb-2 "
     >
       {title}
     </h3>
     <p
-      class="text-sm font-semibold transition-all duration-500 group-hover:text-lg group-hover:font-semibold"
+      class="text-sm font-semibold transition-all duration-500 group-hover:text-lg group-hover:font-semibold "
     >
       {description}
     </p>
