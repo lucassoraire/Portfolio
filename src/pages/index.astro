@@ -4,6 +4,7 @@ import Aboutme from "../components/Aboutme.astro";
 import Stats from "../components/Stats.astro";
 import ProjectCard from "../components/ProjectCard.astro";
 import SkillCard from "../components/SkillCard.astro";
+import Stack from "../components/stack.astro"
 import Contact from "../components/Contact.astro";
 import "../styles/global.css";
 
@@ -19,11 +20,9 @@ import "../styles/global.css";
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"/>
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
   </head>
   <body class="bg-black text-gray-100 font-sans">
     <Header />
@@ -69,9 +68,7 @@ import "../styles/global.css";
 
       <section class="max-w-6xl mx-auto px-6 py-16 scroll-mt-5" id="objetivos">
         <h2 class="text-3xl font-bold mb-3 text-center mt-8">Objetivos</h2>
-        <p class="text-xl font-semibold text-center">
-          Mis <span class="text-sky-600">metas</span> y <span class="text-sky-600">motivaciones</span>  
-        </p>
+        <p class="text-xl font-semibold text-center"> Mis metas y motivaciones</p>
         
         <div
           class="grid grid-cols-1 md:grid-cols-1 gap-8 auto-rows-[150px] md:auto-rows-[400px] mt-15"
@@ -102,6 +99,10 @@ import "../styles/global.css";
         </div>
       </section>
 
+      <section class="mt-20">
+        <Stack>
+      </section>
+
       <section id="contacto" class="scroll-mt-10">
         <Contact />
       </section>
@@ -128,6 +129,10 @@ import "../styles/global.css";
     </main>
 
     <script type="module" src="/scripts/init-aos.js"></script>
+    
+
+
+
 
   </body>
 </html>
