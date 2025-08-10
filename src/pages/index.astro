@@ -9,6 +9,7 @@ import Contact from "../components/Contact.astro";
 import "../styles/global.css";
 
 
+
 // client:only importa un componente que solo corre del lado del navegador
 //import ScrollEffect from '../components/ScrollEffect.jsx';
 ---
@@ -23,6 +24,7 @@ import "../styles/global.css";
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"/>
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
   </head>
   <body class="bg-black text-gray-100 font-sans">
     <Header />
@@ -33,7 +35,7 @@ import "../styles/global.css";
         <Stats />
       </section>
 
-      <h2 class="text-3xl font-bold mb-8 text-center mt-20">
+      <h2 class="text-3xl font-bold mb-8 text-center mt-20 text-white ">
         Mirá algunos de mis <span class="text-sky-600">proyectos</span>
       </h2>
       <section
@@ -64,6 +66,10 @@ import "../styles/global.css";
             image="/assets/imgnikefirst.png"
           />
         </div>
+      </section>
+
+      <section class="mt-20 px-5 py-5 mx-10 md:mx-30 border border-r-amber-50 rounded-xl">
+        <Stack>
       </section>
 
       <section class="max-w-6xl mx-auto px-6 py-16 scroll-mt-5" id="objetivos">
@@ -99,9 +105,7 @@ import "../styles/global.css";
         </div>
       </section>
 
-      <section class="mt-20">
-        <Stack>
-      </section>
+
 
       <section id="contacto" class="scroll-mt-10">
         <Contact />

@@ -1,13 +1,7 @@
-/** @type {import('tailwindcss').Config} */
+
 export default {
   content: ["./src/**/*.{astro,html,js}"],
-  theme: {
-    extend: {},
-  },
-  plugins: [],
-};
-
-module.exports = {
+  darkMode: 'class', // <--- esta línea es FUNDAMENTAL para toggle manual
   theme: {
     extend: {
       fontFamily: {
@@ -15,4 +9,6 @@ module.exports = {
       },
     },
   },
+  plugins: [],
 };
+
