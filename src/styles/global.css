@@ -39,67 +39,6 @@ html , body {
 
 }
 
-  /* Contenedor centrado */
-  .tech-carousel {
-    max-width: 900px;
-    margin: 2rem auto;
-    overflow: hidden;
-    position: relative;
-    background-color: #0f172a; /* fondo negro azulado */
-    border-radius: 1rem;
-    padding: 1rem 0;
-    box-shadow: 0 0 15px rgba(44, 62, 80, 0.4);
-  }
 
-  .tech-track {
-    display: flex;
-    gap: 1.5rem;
-    animation: scrollTech 20s linear infinite;
-  }
-
-  .tech-tag {
-    flex: 0 0 auto;
-    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
-    color: #ecf0f1;
-    font-weight: 500;
-    padding: 0.6rem 1.2rem;
-    border-radius: 9999px;
-    box-shadow:
-      0 0 15px rgba(44, 62, 80, 0.3),
-      0 4px 8px rgba(52, 73, 94, 0.2);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    user-select: none;
-    white-space: nowrap;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-
-  .tech-tag:hover {
-    transform: scale(1.1);
-    box-shadow:
-      0 0 25px rgba(44, 62, 80, 0.5),
-      0 6px 12px rgba(52, 73, 94, 0.4);
-    cursor: pointer;
-  }
-
-  @keyframes scrollTech {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-66.66%);
-    }
-  }
-
-  .tech-tag {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.tech-tag .icon {
-  width: 20px;
-  height: 20px;
-  flex-shrink: 0;
-}
 
 
