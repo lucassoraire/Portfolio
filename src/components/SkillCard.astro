@@ -3,35 +3,31 @@ const { image, title, description, spanCols = 1, spanRows = 1 } = Astro.props;
 ---
 
 
-<div
-  class={`relative group overflow-hidden rounded-xl shadow-lg shadow-white/20 col-span-${spanCols} row-span-${spanRows}`}
->
-  <img
-    src={image}
-    alt={title}
-    class="object-cover w-full h-full transition-transform duration-500 group-hover:scale-120"
-  />
+<div class={`relative overflow-hidden rounded-2xl shadow-lg shadow-white/10 col-span-${spanCols} row-span-${spanRows} group`}>
 
-
-  <div
-    class="absolute inset-0 bg-black/40 transition-opacity duration-500 group-hover:bg-black/60"
-  >
+  {/* Imagen con degradado */}
+  <div class="absolute inset-0">
+    <img
+      src={image}
+      alt={title}
+      class="object-cover w-full h-full transition-transform duration-700 ease-out group-hover:scale-110"
+    />
+    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent"></div>
   </div>
 
-
-  <div
-    class="absolute inset-0 flex flex-col justify-center items-center text-center text-white p-4
-           transition-all duration-500 ease-out"
-  >
-    <h3
-      class="text-3xl font-semibold transition-all duration-500 group-hover:text-6xl group-hover:mb-2 "
-    >
-      {title}
+  {/* Texto sobre la imagen */}
+  <div class="relative z-10 flex flex-col justify-center h-full p-6 md:p-10 text-white max-w-md">
+    <span class="text-sky-400 font-semibold uppercase tracking-widest mb-2">
+      Objetivos
+    </span>
+    <h3 class="text-2xl md:text-3xl font-bold mb-3">
+      {title || "Metas que nos inspiran"}
     </h3>
-    <p
-      class="text-sm font-semibold transition-all duration-500 group-hover:text-lg group-hover:font-semibold "
-    >
-      {description}
+    <p class="text-sm md:text-base text-gray-200">
+      {description || "Trabajamos con visión y compromiso para alcanzar resultados significativos."}
     </p>
   </div>
 </div>
+
+
+
