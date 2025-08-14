@@ -2,6 +2,7 @@
 import "../../styles/global.css";
 import Index from "../index.astro";
 import GaleriaItem from "../../components/GaleriaItem.astro";
+import SmoothScroll from '../../components/SmoothScroll.jsx'
 ---
 
 <html lang="es">
@@ -22,6 +23,7 @@ import GaleriaItem from "../../components/GaleriaItem.astro";
     <title>Proyectos - Puerto Barc.co</title>
   </head>
   <body>
+    <SmoothScroll client:only="react" />
     <main>
 
       <section

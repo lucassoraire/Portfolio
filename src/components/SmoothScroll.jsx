@@ -42,3 +42,19 @@ export default function SmoothScroll() {
 
   return null
 }
+
+const handleAnchorClick = (event) => {
+  if (event.target.closest('a[href^="#"]')) {
+    const href = event.target.getAttribute('href');
+    const target = document.querySelector(href);
+    if (target) {
+      event.preventDefault();
+      lenis.scrollTo(target, {
+        duration: 3.0,  // ▲ Aumenta este valor (más lento)
+        easing: (t) => 1 - Math.pow(1 - t, 3),  // Nueva curva de easing
+        offset: -20,  // Ajusta según tu header
+        immediate: false  // Asegura suavidad
+      });
+    }
+  }
+}
