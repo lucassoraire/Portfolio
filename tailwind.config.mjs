@@ -1,7 +1,6 @@
-
 export default {
   content: ["./src/**/*.{astro,html,js}"],
-  darkMode: 'class', // <--- esta línea es FUNDAMENTAL para toggle manual
+  darkMode: 'class',
   theme: {
     extend: {
       fontFamily: {
@@ -9,6 +8,7 @@ export default {
       },
     },
   },
+  // ¡Elimina la opción 'smooth'! No es compatible con Tailwind
   plugins: [],
 };
 

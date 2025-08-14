@@ -39,6 +39,22 @@ html , body {
 
 }
 
+css
+html.lenis {
+  height: auto;
+}
 
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+/* Fix para navegación */
+:target {
+  scroll-margin-top: 80px; /* Igual que el offset en el componente */
+}
 
 
