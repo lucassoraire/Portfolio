@@ -4,7 +4,7 @@ html , body {
   scroll-behavior: smooth;
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
-  @apply bg-black font-sans;
+  @apply bg-[#0A0A0A] font-sans;
 }
 
 #menu-icon.rotate-90 {

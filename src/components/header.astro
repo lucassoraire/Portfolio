@@ -4,7 +4,7 @@ const currentLang = (Astro.url.searchParams.get("lang") ?? "es") as "es" | "en";
 ---
 
 <header
-  class="bg-black py-5 px-8 shadow-md fixed top-0 left-0 right-0 z-50 border-b border-opacity-50"
+  class="bg-[#0A0A0A]  py-5 px-8 shadow-md fixed top-0 left-0 right-0 z-50 border-b border-opacity-50"
 >
   <div class="max-w-5xl mx-auto flex justify-between items-center">
     <h1 class="text-2xl font-semibold text-white">Lucas Soraire</h1>
@@ -35,7 +35,7 @@ const currentLang = (Astro.url.searchParams.get("lang") ?? "es") as "es" | "en";
   <!-- Menú Mobile -->
 <div
   id="mobile-menu"
-  class="fixed top-0 right-0 left-auto h-screen w-50 bg-black text-gray-300 font-bold py-8 pb-1 flex flex-col gap-6 px-6 z-50 menu-closed text-end mt-3"
+  class="fixed top-0 right-0 left-auto h-screen w-50 bg-[#0A0A0A]  text-gray-300 font-bold py-8 pb-1 flex flex-col gap-6 px-6 z-50 menu-closed text-end mt-3"
 >
   <a href="#aboutme" class="block  text-lg pb-0.5 pt-10">Sobre mí</a>
   <a href="#proyectos" class="block  text-lg pb-0.5">Proyectos</a>
