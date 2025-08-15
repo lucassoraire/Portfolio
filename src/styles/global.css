@@ -39,7 +39,7 @@ html , body {
 
 }
 
-css
+
 html.lenis {
   height: auto;
 }
@@ -56,6 +56,8 @@ html.lenis {
 :target {
   scroll-margin-top: 80px; /* Igual que el offset en el componente */
 }
+
+
 
 
 
