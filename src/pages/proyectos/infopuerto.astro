@@ -26,20 +26,21 @@ import SmoothScroll from '../../components/SmoothScroll.jsx'
     <SmoothScroll client:only="react" />
     <main>
 
-      <section
-          class="w-full min-h-screen flex flex-col justify-end px-6 md:px-12 pb-12 text-white bg-cover bg-center bg-no-repeat"
+        <section
+          class="relative w-full min-h-screen flex flex-col justify-end px-6 md:px-12 pb-12 bg-cover bg-center bg-no-repeat"
           style="background-image: url('/assets/puertouno.jpg')"
         >
-          <!-- Contenedor interno para el contenido -->
-          <div class="space-y-6">
-            <h1 class="text-6xl md:text-8xl font-bold leading-tight">
+
+          <div class="absolute inset-0 bg-black/40 z-0"></div>
+
+          <div class="relative z-10 space-y-6">
+            <h1 class="text-6xl md:text-8xl font-bold leading-tight text-white drop-shadow-lg">
               Puerto Barc.Co
             </h1>
-            <p class="text-xl md:text-2xl max-w-2xl opacity-80">
-              Un sistema pensado para los empleados, facilitandoles cada tarea a
-              realizar
+            <p class="text-xl md:text-2xl max-w-2xl text-white">
+              Un sistema pensado para los empleados, facilitándoles cada tarea a realizar
             </p>
-            <div class="text-center font-light mt-10">
+            <div class="text-center font-light mt-10 text-white">
               <p>Scrolleá para ver más</p>
               <div class="flex justify-center mt-1">
                 <img src="/assets/flechadown.png" alt="" class="w-6 h-6 animate-bounce" />
@@ -51,8 +52,9 @@ import SmoothScroll from '../../components/SmoothScroll.jsx'
 
 
 
+
             <section
-        class="grid grid-cols-1 md:grid-cols-2 gap-4 px-6 py-12  bg-cyan-950"
+        class="grid grid-cols-1 md:grid-cols-2 gap-4 px-6 py-12  bg-[#6c7a89]"
       >
         <h3 class="block md:hidden font-semibold text-center text-white text-sm"> - Login de Barc-Co - </h3>
         <div class="relative group rounded-xl overflow-hidden">
@@ -153,42 +155,42 @@ import SmoothScroll from '../../components/SmoothScroll.jsx'
         <h2 class="text-3xl font-bold mb-8">Tecnologías e implementaciones</h2>
         <ul class="grid grid-cols-2 md:grid-cols-4 gap-6 text-lg font-medium">
           <li
-            class="flex items-center gap-2 px-3 py-3 border border-amber-950 rounded-xl text-sm font-medium w-fit bg-white/5"
+            class="flex items-center gap-2 px-3 py-3 border-2 border-black rounded-xl text-sm font-medium w-fit bg-white/5"
           >
             <img src="/assets/administracion.png" alt="" />Administración de
             envíos y barcos
           </li>
           <li
-            class="flex items-center gap-2 px-3 py-3 border border-amber-950 rounded-xl text-sm font-medium w-fit bg-white/5"
+            class="flex items-center gap-2 px-3 py-3 border-2 border-black rounded-xl text-sm font-medium w-fit bg-white/5"
           >
             <img src="/assets/plano.png" alt="" />Diseñado con JFrame
           </li>
           <li
-            class="flex items-center gap-2 px-3 py-3 border border-amber-950 rounded-xl text-sm font-medium w-fit bg-white/5"
+            class="flex items-center gap-2 px-3 py-3 border-2 border-black rounded-xl text-sm font-medium w-fit bg-white/5"
           >
             <img src="/assets/ajustes.png" alt="" />Función de administrador
           </li>
           <li
-            class="flex items-center gap-2 px-3 py-3 border border-amber-950 rounded-xl text-sm font-medium w-fit bg-white/5"
+            class="flex items-center gap-2 px-3 py-3 border-2 border-black rounded-xl text-sm font-medium w-fit bg-white/5"
           >
             <img src="/assets/poo.png" alt="" />Programación Orientada a Objetos
           </li>
           <li
-            class="flex items-center gap-2 px-3 py-3 border border-amber-950 rounded-xl text-sm font-medium w-fit bg-white/5"
+            class="flex items-center gap-2 px-3 py-3 border-2 border-black rounded-xl text-sm font-medium w-fit bg-white/5"
           >
             <img src="/assets/bdd.png" alt="" />MySQL
           </li>
           <li
-            class="flex items-center gap-2 px-3 py-3 border border-amber-950 rounded-xl text-sm font-medium w-fit bg-white/5"
+            class="flex items-center gap-2 px-3 py-3 border-2 border-black rounded-xl text-sm font-medium w-fit bg-white/5"
           >
             <img src="/assets/java.png" alt="" />Java
           </li>
         </ul>
       </section>
 
-      <section class="bg-black text-white py-12 text-center">
+      <section class="bg-[#0A0A0A] text-white py-12 text-center">
         <h2 class="text-3xl font-semibold">¿Te gustó Barc.Co?</h2>
-        <p class="opacity-80 mt-2">
+        <p class="opacity-80 mt-2 font-semibold">
           Conectemos y llevemos tu próximo proyecto al siguiente nivel.
         </p>
         <div
@@ -203,7 +205,8 @@ import SmoothScroll from '../../components/SmoothScroll.jsx'
 
           <a
             href="/#proyectos"
-            class="flex items-center justify-center bg-transparent text-white border border-sky-600 hover:bg-sky-600 hover:text-white px-6 py-2.5 rounded-xl font-bold text-center"
+            class="flex items-center justify-center bg-transparent text-white border border-sky-600 hover:bg-sky-600 hover:text-white
+            transition-all duration-300 px-6 py-2.5 rounded-xl font-bold text-center"
           >
             Seguir mirando proyectos
             <img src="/assets/foto.png" alt="" class="w-5 h-5 ml-2" />
