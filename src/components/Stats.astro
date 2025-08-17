@@ -1,27 +1,93 @@
-<section class="py-16 bg-[#0A0A0A] ">
+---
+// src/components/Stats.astro (o directamente en tu page.astro)
+---
+<section id="stats" class="py-16 bg-[#0A0A0A] ">
   <div class="max-w-6xl mx-auto px-6">
     <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
       <div class="p-6 border rounded-xl shadow hover:shadow-lg transition">
-        <h3 class="text-5xl font-extrabold text-white-600">+2</h3>
-        <p class="mt-1 text-sm text-sky-600 font-bold">Años de carrera</p>
+        <h3
+          class="stat-num text-5xl font-extrabold text-white-600"
+          data-target="20"
+        >
+          0
+        </h3>
+        <p class="mt-1 text-sm text-sky-600 font-bold">
+          meses de carrera
+        </p>
       </div>
 
       <div class="p-6 border rounded-xl shadow hover:shadow-lg transition">
-        <h3 class="text-5xl font-extrabold text-white-600">+4</h3>
-        <p class="mt-1 text-sm text-sky-600 font-bold">Proyectos completados</p>
+        <h3
+          class="stat-num text-5xl font-extrabold text-white-600"
+          data-target="4"
+        >
+          0
+        </h3>
+        <p class="mt-1 text-sm text-sky-600 font-bold">
+          Proyectos completados
+        </p>
       </div>
 
       <div class="p-6 border rounded-xl shadow hover:shadow-lg transition">
-        <h3 class="text-5xl font-extrabold text-white-600">+5</h3>
+        <h3
+          class="stat-num text-5xl font-extrabold text-white-600"
+          data-target="5"
+        >
+          0
+        </h3>
         <p class="mt-1 text-sm text-sky-600 font-bold">
           Tecnologías utilizadas
         </p>
       </div>
 
       <div class="p-6 border rounded-xl shadow hover:shadow-lg transition">
-        <h3 class="text-5xl font-extrabold text-white-600">+900</h3>
-        <p class="mt-1 text-sm text-sky-600 font-bold">Mates :)</p>
+        <h3
+          class="stat-num text-5xl font-extrabold text-white-600"
+          data-target="900"
+        >
+          0
+        </h3>
+        <p class="mt-1 text-sm text-sky-600 font-bold">
+          Mates :)
+        </p>
       </div>
     </div>
   </div>
 </section>
+
+
+<script type="module" client:load>
+  // 1. Función que anima el conteo de 0 → target
+  function animateCount(el) {
+    const target = +el.dataset.target;
+    const duration = 1500; // ms
+    const startTime = performance.now();
+
+    function tick(now) {
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const current = Math.floor(progress * target);
+      el.textContent = '+' + (progress < 1 ? current : target);
+      if (progress < 1) {
+        requestAnimationFrame(tick);
+      }
+    }
+
+    requestAnimationFrame(tick);
+  }
+
+  // 2. Intersection Observer que dispara la animación
+  document.addEventListener('DOMContentLoaded', () => {
+    const stats = document.querySelectorAll('.stat-num');
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        animateCount(entry.target);
+        obs.unobserve(entry.target);
+      });
+    }, { threshold: 0.6 });
+
+    stats.forEach(el => observer.observe(el));
+  });
+</script>
+
