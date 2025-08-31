@@ -27,9 +27,9 @@ import SmoothScroll from "../components/SmoothScroll.jsx";
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
-    
   </head>
   <body class="bg-[#0D0E0E] text-gray-100 font-sans" data-scroll-container>
+    <div id="custom-cursor"></div>
     <SmoothScroll client:only="react" />
     <Header />
     <main class="pt-15">
@@ -55,37 +55,36 @@ import SmoothScroll from "../components/SmoothScroll.jsx";
         Realizados durante la carrera, donde apliqué soluciones, combinando
         diseño y tecnología.
       </p>
-<section
-  class="max-w-6xl mx-auto p-4 grid gap-10 grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-1 scroll-mt-40"
-  data-scroll-section
-  id="proyectos"
->
-  <div>
-    <ProjectCard
-      title="Hotel Niluma 🏨 - Sitio Web"
-      description={`Sitio web responsive con diseño intuitivo y optimizado para SEO.\n Enfocado en experiencia de usuario, accesibilidad y rendimiento móvil.\n Presenta servicios, galería y contacto de forma clara y atractiva.`}
-      link="/proyectos/infohotel"
-      image="/assets/hotelnilumauno.png"
-    />
-  </div>
-  <div>
-    <ProjectCard
-      title="Puerto Barc.Co 🚢 - Sistema de Gestión"
-      description={'Aplicación Java con POO y conexión a base de datos SQL.\n Sistema CRUD para gestión de cargas y embarques portuarios.\n Automatiza procesos internos y mejora la eficiencia operativa.'}
-      link="/proyectos/infopuerto"
-      image="/assets/puertouno.jpg"
-    />
-  </div>
-  <div>
-    <ProjectCard
-      title="Nike 👟 - Landing Page"
-      description={'Landing page en HTML y CSS con diseño moderno y responsive.\n Optimizada para conversión rápida y campañas de marketing.\n Presentación visual clara de productos y promociones.'}
-      link="/proyectos/infonike"
-      image="/assets/imgnikefirst.png"
-    />
-  </div>
-</section>
-
+      <section
+        class="max-w-6xl mx-auto p-4 grid gap-10 grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-1 scroll-mt-40"
+        data-scroll-section
+        id="proyectos"
+      >
+        <div>
+          <ProjectCard
+            title="Hotel Niluma 🏨 - Sitio Web"
+            description={`Sitio web responsive con diseño intuitivo y optimizado para SEO.\n Enfocado en experiencia de usuario, accesibilidad y rendimiento móvil.\n Presenta servicios, galería y contacto de forma clara y atractiva.`}
+            link="/proyectos/infohotel"
+            image="/assets/hotelnilumauno.png"
+          />
+        </div>
+        <div>
+          <ProjectCard
+            title="Puerto Barc.Co 🚢 - Sistema de Gestión"
+            description={"Aplicación Java con POO y conexión a base de datos SQL.\n Sistema CRUD para gestión de cargas y embarques portuarios.\n Automatiza procesos internos y mejora la eficiencia operativa."}
+            link="/proyectos/infopuerto"
+            image="/assets/puertouno.jpg"
+          />
+        </div>
+        <div>
+          <ProjectCard
+            title="Nike 👟 - Landing Page"
+            description={"Landing page en HTML y CSS con diseño moderno y responsive.\n Optimizada para conversión rápida y campañas de marketing.\n Presentación visual clara de productos y promociones."}
+            link="/proyectos/infonike"
+            image="/assets/imgnikefirst.png"
+          />
+        </div>
+      </section>
 
       <div class="flex justify-center items-center">
         <a href="#stack" class="smooth-link">
@@ -102,85 +101,112 @@ import SmoothScroll from "../components/SmoothScroll.jsx";
         data-scroll-section
       >
         <Stack />
-      
-        </section>
-
-        <section
-          class="max-w-6xl mx-auto px-6 py-16 scroll-mt-0"
-          id="objetivos"
-          data-scroll-section
-        >
-          <h2 class="text-4xl font-bold text-center mt-10"><span class="text-sky-600">Objetivos</span> profesionales</h2>
-          <p
-            class="text-gray-400 max-w-2xl mx-auto text-center font-semibold mb-2 mt-2"
-            data-scroll-section
-          >
-            Metas y motivaciones como desarrollador
-          </p>
-
-          <div
-            class="grid grid-cols-1 md:grid-cols-2 gap-8 auto-rows-[150px] md:auto-rows-[250px] mt-15"
-          >
-            <SkillCard
-              image="/assets/potenciar.jpg"
-              title="Potenciar ideas escalables"
-              description="Participar en proyectos donde pueda proponer mejoras y aportar una mirada creativa."
-              spanCols={2}
-            />
-            <SkillCard
-              image="/assets/potenciar.jpg"
-              title="Diseñar para el usuario"
-              description="Mi enfoque está en crear experiencias simples e intuitivas que respondan a necesidades reales."
-            />
-            <SkillCard
-              image="/assets/potenciar.jpg"
-              title="Aplicar mis conocimientos"
-              description="Busco espacios donde pueda poner en práctica lo que aprendí y desarrollar habilidades técnicas."
-              spanRows={2}
-            />
-            <SkillCard
-              image="/assets/potenciar.jpg"
-              title="Colaborar en entornos reales"
-              description="Quiero integrarme a entornos profesionales que me permitan crecer profesionalmente."
-            />
-          </div>
-        </section>
-
-        <section id="contacto" class="scroll-mt-10" data-scroll-section>
-          <Contact />
-        </section>
-
-        <footer
-          class="bg-[#0A0A0A]  py-8 mt-16 border-t border-opacity-50"
-          data-scroll-section
-        >
-          <div
-            class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-white-700"
-          >
-            <div class="mb-4 md:mb-0 text-center md:text-left text-white">
-              <p class="font-bold text-lg">Contacto</p>
-              <p class="font-medium">Email: lucassoraire100@gmail.com</p>
-              <p class="font-medium">Tel: +54 11 3660-6826</p>
-            </div>
-
-            <div class="items-center mb-5 sm:mb-0 shadow-lg shadow-white/20">
-              <img src="/favicon.ico" alt="icon LS" />
-            </div>
-
-            <div class="text-center text-l text-white font-semibold">
-              <p>{new Date().getFullYear()} • Lucas Soraire - Portfolio.</p>
-            </div>
-          </div>
-        </footer>
       </section>
 
+      <section
+        class="max-w-6xl mx-auto px-6 py-16 scroll-mt-0"
+        id="objetivos"
+        data-scroll-section
+      >
+        <h2 class="text-4xl font-bold text-center mt-10">
+          <span class="text-sky-600">Objetivos</span> profesionales
+        </h2>
+        <p
+          class="text-gray-400 max-w-2xl mx-auto text-center font-semibold mb-2 mt-2"
+          data-scroll-section
+        >
+          Metas y motivaciones como desarrollador
+        </p>
 
-      <script type="module" src="/scripts/init-aos.js"></script>
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 gap-8 auto-rows-[150px] md:auto-rows-[250px] mt-15"
+        >
+          <SkillCard
+            image="/assets/potenciar.jpg"
+            title="Potenciar ideas escalables"
+            description="Participar en proyectos donde pueda proponer mejoras y aportar una mirada creativa."
+            spanCols={2}
+          />
+          <SkillCard
+            image="/assets/potenciar.jpg"
+            title="Diseñar para el usuario"
+            description="Mi enfoque está en crear experiencias simples e intuitivas que respondan a necesidades reales."
+          />
+          <SkillCard
+            image="/assets/potenciar.jpg"
+            title="Aplicar mis conocimientos"
+            description="Busco espacios donde pueda poner en práctica lo que aprendí y desarrollar habilidades técnicas."
+            spanRows={2}
+          />
+          <SkillCard
+            image="/assets/potenciar.jpg"
+            title="Colaborar en entornos reales"
+            description="Quiero integrarme a entornos profesionales que me permitan crecer profesionalmente."
+          />
+        </div>
+      </section>
+
+      <section id="contacto" class="scroll-mt-10" data-scroll-section>
+        <Contact />
+      </section>
+
+      <footer
+        class="bg-[#0A0A0A] py-8 mt-16 border-t border-opacity-50"
+        data-scroll-section
+      >
+        <div
+          class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-white-700"
+        >
+          <div class="mb-4 md:mb-0 text-center md:text-left text-white">
+            <p class="font-bold text-lg">Contacto</p>
+            <p class="font-medium">Email: lucassoraire100@gmail.com</p>
+            <p class="font-medium">Tel: +54 11 3660-6826</p>
+          </div>
+
+          <div class="items-center mb-5 sm:mb-0 shadow-lg shadow-white/20">
+            <img src="/favicon.ico" alt="icon LS" />
+          </div>
+
+          <div class="text-center text-l text-white font-semibold">
+            <p>{new Date().getFullYear()} • Lucas Soraire - Portfolio.</p>
+          </div>
+        </div>
+      </footer>
+    </main>
+
+    <script type="module" src="/scripts/init-aos.js"></script>
+    <script>
+      document.addEventListener("astro:after-swap", () => {
+        window.dispatchEvent(new Event("scroll"));
+      });
+    </script>
+    
+      <!--
       <script>
-        document.addEventListener("astro:after-swap", () => {
-          window.dispatchEvent(new Event("scroll"));
+        const colors = {
+          base: "#ffffff", // blanco para fondo oscuro
+          hover: "#1f1f1f", // gris oscuro para hover
+          accent: "#7d7d7d", // color destacado (opcional)
+        };
+
+        window.addEventListener("DOMContentLoaded", () => {
+          const cursor = document.getElementById("custom-cursor");
+          const hoverables = document.querySelectorAll("a, button, .hoverable");
+
+          if (cursor) {
+            document.addEventListener("mousemove", (e) => {
+              cursor.style.left = `${e.clientX}px`;
+              cursor.style.top = `${e.clientY}px`;
+            });
+
+            hoverables.forEach((el) => {
+              el.addEventListener("pointerover", () => cursor.classList.add("hovering"));
+              el.addEventListener("pointerout", () => cursor.classList.remove("hovering"));
+            });
+          }
         });
       </script>
-    </main>
+      -->
+
   </body>
 </html>
